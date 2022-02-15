@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(105, 100, 100);
+  background-color: white;
+}
+
+.container {
+  /* padding-top: 80px; */
+  /* height: 100vh; */
+  margin: auto;
+  width: 1000px;
+  max-width: 90vw;
+  display: grid;
+  justify-content: center;
+}
+
+.content {
+  height: 300px;
+  width: 600px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.content>h1 {
+  color: bisque;
+  font-size: 2.2rem;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+#shop-form {
+  padding: 1vw;
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+
+}
+
+label {
+  width: 12rem;
+  color: orange;
+  font-size: 1.5rem;
+}
+
+.standard-input {
+  border: 0;
+  background-color: inherit;
+  border-bottom: 1px rgba(194, 20, 20, 0.699) solid;
+  border-top: 1px rgba(143, 144, 153, 0.836) solid;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  margin: auto;
+  background-color: rgba(144, 188, 224, 0.808);
+  border: 0;
+  width: 6rem;
+  height: 1.8rem;
+  border-radius: 15px;
+}
+
+.shopping-list {
+  padding-top: 40px;
+}
+
+th {
+  border: 1px red solid;
+}
