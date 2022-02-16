@@ -17,6 +17,7 @@ body {
   max-width: 90vw;
   display: grid;
   justify-content: center;
+  align-items: center;
 }
 
 .content {
@@ -77,8 +78,17 @@ label {
 
 .shopping-list {
   padding-top: 40px;
+  border-collapse: collapse;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 th {
-  border: 1px red solid;
+  width: 100px;
+  border: 1px rgb(179, 224, 15) solid;
+}
+
+.no-border {
+  border: none;
 }
