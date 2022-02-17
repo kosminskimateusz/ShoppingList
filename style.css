@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: rgb(105, 100, 100);
-  background-color: white;
+  background-color: rgb(32, 32, 32);
+  /* background-color: white; */
 }
 
 .container {
@@ -76,19 +76,47 @@ label {
   border-radius: 15px;
 }
 
-.shopping-list {
-  padding-top: 40px;
+.shopping-list,
+#product-list {
+  /* padding-top: 40px; */
   border-collapse: collapse;
   display: grid;
   align-items: center;
   justify-content: center;
 }
 
-th {
+th,
+td {
   width: 100px;
-  border: 1px rgb(179, 224, 15) solid;
+  text-align: center;
+  line-height: 2rem;
+  color: rgba(65, 145, 214, 0.815);
+}
+
+td {
+  border: none;
+  border-top: 1px rgb(68, 71, 57) solid;
 }
 
 .no-border {
   border: none;
+}
+
+.delete-button {
+  position: relative;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(155, 16, 16);
+}
+
+.delete-button::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -30%;
+  width: 160%;
+  height: 110%;
+  background: rgba(255, 179, 15, 0.856);
+  z-index: -1;
+  border-radius: 6px;
 }
