@@ -60,6 +60,9 @@ label {
 }
 
 .standard-input {
+  color: wheat;
+  width: 150px;
+  padding-left: 10px;
   border: 0;
   background-color: inherit;
   border-bottom: 1px rgba(194, 20, 20, 0.699) solid;
@@ -68,12 +71,17 @@ label {
 }
 
 .btn-primary {
+  cursor: pointer;
   margin: auto;
   background-color: rgba(144, 188, 224, 0.808);
   border: 0;
   width: 6rem;
   height: 1.8rem;
   border-radius: 15px;
+}
+
+.btn-primary:hover {
+  background-color: rgba(111, 166, 211, 0.808);
 }
 
 .shopping-list,
@@ -118,7 +126,7 @@ td {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(rgba(255, 179, 15, 0.856), rgb(25, 122, 160),rgba(15, 139, 255, 0.856));
+  background: radial-gradient(rgba(255, 179, 15, 0.856), rgb(25, 122, 160), rgba(15, 139, 255, 0.856));
   border-radius: 6px;
   z-index: -1;
 }
