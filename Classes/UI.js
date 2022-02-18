@@ -9,7 +9,12 @@ export class UI {
   constructor() {
     localStorage.setItem('productList', JSON.stringify(this.productList));
     const temp = localStorage.getItem('productList');
-    console.log(JSON.parse(temp));
+    const objects = JSON.parse(temp);
+    const prods = [];
+    objects.forEach(element => {
+      prods.push(new Product(element.name, element.price))
+    });
+    console.log("prods: ", prods);
   }
 
 
