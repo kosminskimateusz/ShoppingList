@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <script src="./app.js" defer></script>
+  <script type="module" src="./app.js" defer></script>
   <title>Shop List</title>
 </head>
 
@@ -17,15 +17,11 @@
       <form id="shop-form">
         <div class="form-group">
           <label for="name">Product Name</label>
-          <input type="text" id="name" class="standard-input">
-        </div>
-        <div class="form-group">
-          <label for="shop">Shop</label>
-          <input type="text" id="shop" class="standard-input">
+          <input type="text" id="name" class="standard-input" value="makaron">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
-          <input type="number" id="price" class="standard-input">
+          <input type="number" id="price" class="standard-input" value="4">
         </div>
         <input type="submit" value="Add Product" class="btn-primary">
       </form>
@@ -35,12 +31,11 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Shop</th>
           <th>Price</th>
           <th class="no-border"></th>
         </tr>
       <tbody id="product-list">
-        
+
       </tbody>
       </thead>
     </table>
