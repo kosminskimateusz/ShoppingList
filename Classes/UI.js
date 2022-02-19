@@ -1,4 +1,5 @@
 import { Product } from "./Product.js";
+import { Store } from "./Store.js";
 
 export class UI {
 
@@ -18,12 +19,11 @@ export class UI {
   //   localStorage.setItem('productList', JSON.stringify(this.productList));
   // }
 
+  
+
   static DisplayProducts() {
     // Represent data in table on DOM Loaded
-    const StoredProducts = [
-      new Product("Olej", 5),
-      new Product("Kokos", 12)
-    ];
+    const StoredProducts = Store.GetProducts();
 
     const products = StoredProducts;
 
