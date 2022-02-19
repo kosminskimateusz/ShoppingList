@@ -1,71 +1,74 @@
 import { Product } from "./Product.js";
 
 export class UI {
-  productList = [
-    new Product("Olej", 5),
-    new Product("Kokos", 12)
-  ];
+
 
   constructor() {
-    localStorage.setItem('productList', JSON.stringify(this.productList));
-    const temp = localStorage.getItem('productList');
-    const objects = JSON.parse(temp);
-    const prods = [];
-    objects.forEach(element => {
-      prods.push(new Product(element.name, element.price))
-    });
-    console.log("prods: ", prods);
+    // localStorage.setItem('productList', JSON.stringify(this.productList));
+    // const temp = localStorage.getItem('productList');
+    // const objects = JSON.parse(temp);
+    // const prods = [];
+    // objects.forEach(element => {
+    //   prods.push(new Product(element.name, element.price))
+    // });
+    // console.log("prods: ", prods);
   }
 
+  // AddProductToLocalStorage(product) {
+  //   localStorage.setItem('productList', JSON.stringify(this.productList));
+  // }
 
-  ShowProducts() {
+  static DisplayProducts() {
     // Represent data in table on DOM Loaded
-    const table = document.querySelector("#product-list");
-    table.innerHTML = '';
-    this.productList.forEach(element => {
-      const product = document.createElement('tr');
-      product.innerHTML = `
-      <td>${element.name}</td>
-      <td>${element.price}</td>
-      <td><a href="#">DELETE</a></td>
-      `;
-      table.appendChild(product);
-    });
-    console.log(this.productList);
+    const StoredProducts = [
+      new Product("Olej", 5),
+      new Product("Kokos", 12)
+    ];
+
+    const products = StoredProducts;
+
+    products.forEach((product) =>
+      UI.AddProductToList(product));
   }
 
   // ADD PRODUCT
-  AddProduct() {
-    const productData = this.#GetInputProduct();
-    if (this.#Validation(productData)) {
-      this.#ClearInput();
-      const product = new Product(productData.name, parseInt(productData.price));
-      this.productList.push(product);
-      this.ShowProducts();
-    } else {
-      alert("Incorrect input");
+  static AddProductToList(product) {
+    const list = document.querySelector('#product-list');
+
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td>${product.name}</td>
+      <td>${product.price}</td>
+      <td><a href="#" class="delete-product">Delete</a></td>
+    `;
+
+    list.appendChild(row);
+  }
+
+  static DeleteProduct(element) {
+    if (element.classList.contains('delete-product'))
+      element.parentElement.parentElement.remove();
+  }
+
+  static ShowAlert(message, className) {
+    if (!document.querySelector(`.alert.alert-${className}`)) {
+    const div = document.createElement('div');
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+
+    const container = document.querySelector('.content');
+    const form = document.querySelector('#shop-form');
+    container.insertBefore(div, form);
+    // Vanish in 3 seconds
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
     }
   }
 
-
-  #GetInputProduct() {
-    const name = document.querySelector("#name").value;
-    const price = document.querySelector("#price").value;
-    return { name, price };
+  static ClearFields() {
+    document.querySelector('#name').value = '';
+    document.querySelector('#price').value = '';
   }
 
-  // CLEAR INPUT
-  #ClearInput() {
-    document.querySelector("#name").value = null;
-    document.querySelector("#price").value = null;
-  }
-
-  // INPUT VALIDATION
-  #Validation(data) {
-    if (data.name === '' || data.price === '') {
-      return false;
-    }
-    return true;
-  }
-
+  
 }

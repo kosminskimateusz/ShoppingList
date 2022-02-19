@@ -21,7 +21,7 @@ body {
 }
 
 .content {
-  height: 300px;
+  min-height: 320px;
   width: 600px;
   max-width: 100%;
   display: grid;
@@ -61,7 +61,7 @@ label {
 
 .standard-input {
   color: wheat;
-  width: 150px;
+  width: 200px;
   padding-left: 10px;
   border: 0;
   background-color: inherit;
@@ -129,4 +129,24 @@ td {
   background: radial-gradient(rgba(255, 179, 15, 0.856), rgb(25, 122, 160), rgba(15, 139, 255, 0.856));
   border-radius: 6px;
   z-index: -1;
+}
+
+.alert {
+  width: 70%;
+  height: 2rem;
+  margin: auto;
+  font-size: 1.2rem;
+  color: aliceblue;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-danger {
+  background-color: rgb(161, 24, 36);
+}
+
+.alert-success {
+  background-color: rgb(25, 133, 39);
 }
